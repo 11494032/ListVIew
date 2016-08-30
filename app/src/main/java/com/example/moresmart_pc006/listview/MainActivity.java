@@ -58,7 +58,15 @@ public class MainActivity extends AppCompatActivity {
         public View getView(int i, View view, ViewGroup viewGroup) {
 
             Log.d(TAG,"getView");
-            TextView textView = new TextView(MainActivity.this);
+            TextView textView = null;
+            if(view == null)
+            {
+                 textView = new TextView(MainActivity.this);
+            }
+            else
+            {
+                textView = (TextView) view;
+            }
 
             textView.setText((String)getItem(i));
 
